@@ -1,0 +1,17 @@
+{
+  "buildCommand": "vite build",
+  "outputDirectory": "dist",
+  "framework": null,
+  "rewrites": [
+    { "source": "/api/movies/:id/similar", "destination": "/api/movies/[id]/similar" },
+    { "source": "/api/movies/:id",          "destination": "/api/movies/[id]" },
+    { "source": "/api/movies",              "destination": "/api/movies" },
+    { "source": "/api/mood-match",          "destination": "/api/mood-match" },
+    { "source": "/(.*)",                    "destination": "/index.html" }
+  ],
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "@vercel/node@5"
+    }
+  }
+}
